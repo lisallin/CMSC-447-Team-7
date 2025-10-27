@@ -5,6 +5,8 @@ import { FAQContent } from './components/FAQContent';
 import { HomePage } from './components/HomePage';
 
 
+
+
 function App() {
   const [activeSection, setActiveSection] = useState({
     category: 'home',
@@ -12,9 +14,13 @@ function App() {
   });
 
 
+
+
   const handleSectionChange = (category, section) => {
     setActiveSection({ category, section });
   };
+
+
 
 
   return (
@@ -41,22 +47,9 @@ function App() {
 }
 
 
+
+
 export default App;
-
-
-/*import logo from './logo.svg';
-import './App.css';
-
-
-function App() {
-  return (
-    <h1>HELLO WORLD!</h1>
-  );
-}
-
-
-export default App;*/
-
 
 
 

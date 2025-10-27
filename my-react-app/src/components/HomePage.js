@@ -9,16 +9,17 @@ export function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="col-span-1 md:col-span-2">
             <img
-              src= "https://www.csee.umbc.edu/wp-content/uploads/sites/659/2022/02/computerLab.jpeg"
-              alt="CSEE image"
-              className="w-full h-96 object-cover rounded-lg shadow-lg"
+              src="https://coeit.umbc.edu/wp-content/uploads/sites/117/2016/01/Campus_Entrance_sign-2828-1-e1458838962758-1920x768.jpg"
+              alt="university building"
+              className="w-full h-72 object-cover rounded-lg shadow-lg"
             />
           </div>
           <div className="col-span-1 md:col-span-1">
             <img
-              src="https://coeit.umbc.edu/wp-content/uploads/sites/117/2016/01/Campus_Entrance_sign-2828-1-e1458838962758-1920x768.jpg"
-              alt="university building"
-              className="w-full h-72 object-cover rounded-lg shadow-lg"
+              
+              src= "https://www.csee.umbc.edu/wp-content/uploads/sites/659/2022/02/computerLab.jpeg"
+              alt="CSEE image"
+              className="w-full h-96 object-cover rounded-lg shadow-lg"
             />
           </div>
         </div>

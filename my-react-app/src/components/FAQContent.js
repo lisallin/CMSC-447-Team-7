@@ -8,7 +8,7 @@ export function FAQContent({ category, section }) {
 
   const faqData = {
     undergrad: {
-      'Admissions & Requirements': [
+      'Miscellaneous Questions': [
         {
           question: 'What are the admission requirements for undergraduate programs?',
           answer: 'Undergraduate applicants must have a high school diploma or equivalent, submit official transcripts, SAT or ACT scores, letters of recommendation, and a personal statement. The minimum GPA requirement is 3.0, though most admitted students have higher GPAs.'
@@ -26,7 +26,7 @@ export function FAQContent({ category, section }) {
           answer: 'Yes, there is a $75 application fee. Fee waivers are available for students who demonstrate financial need. You can request a fee waiver through your application portal.'
         }
       ],
-      'Academic Programs': [
+      'Advising': [
         {
           question: 'What undergraduate majors do you offer?',
           answer: 'We offer over 50 undergraduate majors across various disciplines including sciences, humanities, engineering, business, and arts. Each program is designed to provide comprehensive education with opportunities for hands-on learning and research.'
@@ -44,7 +44,7 @@ export function FAQContent({ category, section }) {
           answer: 'Our average class size is 25 students, ensuring personalized attention from faculty. Introductory courses may be larger (50-100 students), while upper-level and seminar courses typically have 10-20 students.'
         }
       ],
-      'Student Life & Resources': [
+      'Registration': [
         {
           question: 'What housing options are available?',
           answer: 'We offer traditional dormitories, suite-style housing, and apartment-style living for upperclassmen. All first-year students are required to live on campus. Housing assignments are made based on preferences and availability.'
@@ -62,7 +62,7 @@ export function FAQContent({ category, section }) {
           answer: 'Yes, we have multiple dining halls and cafes offering diverse meal options including vegetarian, vegan, and allergen-free choices. All meal plans include flex dollars that can be used at any campus dining location.'
         }
       ],
-      'Financial Aid & Scholarships': [
+      'Graduation': [
         {
           question: 'What types of financial aid are available?',
           answer: 'We offer need-based financial aid, merit scholarships, work-study programs, and student loans. Over 85% of our students receive some form of financial assistance. Aid packages may combine multiple types of support.'

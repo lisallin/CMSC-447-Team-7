@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 
 export function FAQSidebar({ onSectionChange, activeSection }) {
-  const [isUndergradOpen, setIsUndergradOpen] = useState(true);
+  const [isUndergradOpen, setIsUndergradOpen] = useState(false);
   const [isGradOpen, setIsGradOpen] = useState(false);
 
   return (
@@ -22,44 +22,44 @@ export function FAQSidebar({ onSectionChange, activeSection }) {
         {isUndergradOpen && (
           <div className="ml-4 space-y-2">
             <button 
-              onClick={() => onSectionChange('undergrad', 'Admissions & Requirements')}
+              onClick={() => onSectionChange('undergrad', 'Miscellaneous Questions')}
               className={`block w-full text-left px-3 py-2 rounded ${
-                activeSection.section === 'Admissions & Requirements' 
+                activeSection.section === 'Miscellaneous Questions' 
                   ? 'bg-blue-100 text-blue-700' 
                   : 'hover:bg-gray-200'
               }`}
             >
-              Admissions & Requirements
+              Miscellaneous Questions
             </button>
             <button 
-              onClick={() => onSectionChange('undergrad', 'Academic Programs')}
+              onClick={() => onSectionChange('undergrad', 'Advising')}
               className={`block w-full text-left px-3 py-2 rounded ${
-                activeSection.section === 'Academic Programs' 
+                activeSection.section === 'Advising' 
                   ? 'bg-blue-100 text-blue-700' 
                   : 'hover:bg-gray-200'
               }`}
             >
-              Academic Programs
+              Advising
             </button>
             <button 
-              onClick={() => onSectionChange('undergrad', 'Student Life & Resources')}
+              onClick={() => onSectionChange('undergrad', 'Registration')}
               className={`block w-full text-left px-3 py-2 rounded ${
-                activeSection.section === 'Student Life & Resources' 
+                activeSection.section === 'Registration' 
                   ? 'bg-blue-100 text-blue-700' 
                   : 'hover:bg-gray-200'
               }`}
             >
-              Student Life & Resources
+              Registration
             </button>
             <button 
-              onClick={() => onSectionChange('undergrad', 'Financial Aid & Scholarships')}
+              onClick={() => onSectionChange('undergrad', 'Graduation')}
               className={`block w-full text-left px-3 py-2 rounded ${
-                activeSection.section === 'Financial Aid & Scholarships' 
+                activeSection.section === 'Graduation' 
                   ? 'bg-blue-100 text-blue-700' 
                   : 'hover:bg-gray-200'
               }`}
             >
-              Financial Aid & Scholarships
+              Graduation
             </button>
           </div>
         )}
