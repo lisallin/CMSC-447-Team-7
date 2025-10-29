@@ -30,36 +30,52 @@ export function HomePage() {
       <div className="prose prose-slate max-w-none">
         <h2 className="text-slate-900 mb-4">About Our Department</h2>
         <p className="text-slate-700 mb-4">
-          Welcome to our department, where excellence in education meets innovation and research. 
-          We are dedicated to providing world-class education and fostering an environment where 
-          students can thrive academically and personally.
-        </p>
+          Welcome to the UMBC Computer Science and Electrical Engineering (CSEE) department page.
+          For more than 30 years, the Department of Computer Science and Electrical Engineering (CSEE) at UMBC has produced the Computer Science, 
+          Computer Engineering, and Electrical Engineering leaders of tomorrow. Currently, the department offers two undergraduate degrees in computer 
+          science and computer engineering with approximately 2300 students, and graduate degrees in five programs computer science (MS and PhD), computer 
+          engineering (MS and PhD), electrical engineering (MS and PhD), data science (MS), and cybersecurity (MS) with a total of approximately 1270 students.
+          </p>
+
+          <p className="text-slate-700 mb-4">
+          The department has 41 tenured and tenure-track faculty, 18 full-time instructional faculty, 15 research faculty, and over 20 affiliate and part-time 
+          adjunct faculty, whose research are in five clusters (i) artificial intelligence, machine learning, and signal processing; (ii) communications and 
+          photonics; (iii) computer architecture and hardware systems; (iv) cyber-physical systems; and (v) graphics and visualization.
+          </p>
+
+          <p className="text-slate-700 mb-4">
+          The department is centered in the Information Technology and Engineering (ITE) building, which has an excellent laboratory and computing environment, 
+          and in the Technology Research Center, which has specialized research laboratories. You can find directions to UMBC and information on parking here.
+          </p>
+
+          <p className="text-slate-700 mb-4">
+          A variety of governmental and industrial sponsors including the National Science Foundation (NSF), the National Security Agency (NSA), the National 
+          Institutes of Standards and Technology (NIST), and the Department of Defense (DoD) provided more than $5.5M in research expenditures in 2023.
+          </p>
         
-        <h3 className="text-slate-900 mb-3">Our Mission</h3>
+        <h3 className="text-slate-900 mb-3">What We Offer</h3>
         <p className="text-slate-700 mb-4">
-          Our mission is to prepare students for successful careers and meaningful lives through 
-          rigorous academic programs, cutting-edge research opportunities, and comprehensive support 
-          services. We believe in the transformative power of education and are committed to 
-          nurturing the next generation of leaders, thinkers, and innovators.
+          <li>Computer Science (BS/MS/PhD)</li>
+          <li>Computer Engineering (BS/MS/PhD)</li>
+          <li>Electrical Engineering (MS/PhD)</li>
+          <li>Data Science (MPS)</li>
+          <li>Cyber Security (MS)</li>
+          <li>Certificates (Data Science, Cyber Security)</li>
+          The CSEE also offers a variety of research areas, including Artificial Intelligence, Robotics, and Quantum Computing.
+          There are many research-focus labs spreading across the fields of Computer Science, Computer Engineering, and Electrical Engineering, 
+          ranging from CDL - Cyber Defense Lab to the Remote Sensing Singal and Image Processing Lab.
         </p>
 
-        <h3 className="text-slate-900 mb-3">What We Offer</h3>
+        <h3 className="text-slate-900 mb-3">Location</h3>
         <ul className="text-slate-700 mb-4 space-y-2">
-          <li>Comprehensive undergraduate and graduate programs</li>
-          <li>State-of-the-art facilities and research laboratories</li>
-          <li>Distinguished faculty with expertise in their fields</li>
-          <li>Extensive internship and career development opportunities</li>
-          <li>Active student organizations and community engagement</li>
-          <li>Generous financial aid and scholarship programs</li>
+          CSEE Main Office: ITE 325 1000 Hilltop Circle, Baltimore, MD 21250
         </ul>
 
-        <h3 className="text-slate-900 mb-3">Join Our Community</h3>
+        <h3 className="text-slate-900 mb-3">Contact Us</h3>
         <p className="text-slate-700">
-          Whether you're considering undergraduate or graduate studies, we invite you to explore 
-          what our department has to offer. Browse through our FAQ sections to learn more about 
-          admissions requirements, academic programs, student life, and research opportunities. 
-          We look forward to welcoming you to our community.
+          Phone: 410-455-3500
         </p>
+
       </div>
     </div>
   );
