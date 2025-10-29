@@ -14,14 +14,6 @@ export function FAQContent({ category, section }) {
         {
           question: 'What counts as academic misconduct? I am aware of academic misconduct that occurred in a class, what do I do?',
           answer: ' The UMBC policies on academic integrity and academic misconduct and the definition of misconduct.  If you are aware of academic misconduct that has occurred in one of your classes, please contact either the professor or a teaching assistant.'
-        },
-        {
-          question: 'SAMPLE: Can I transfer credits from another institution?',
-          answer: 'Yes, we accept transfer credits from accredited institutions. Transfer students must submit official transcripts from all previously attended colleges. Credits are evaluated on a case-by-case basis, and a maximum of 60 credits can be transferred.'
-        },
-        {
-          question: 'SAMPLE: Is there an application fee?',
-          answer: 'Yes, there is a $75 application fee. Fee waivers are available for students who demonstrate financial need. You can request a fee waiver through your application portal.'
         }
       ],
       'Advising': [
