@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import ChatbotIconPNG from '../assets/icons/chatbotIcon.png'
 
 export default function ChatbotIcon() {
     const [isClicked, setIsClicked] = useState(false);
