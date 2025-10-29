@@ -6,7 +6,14 @@ export function FAQSidebar({ onSectionChange, activeSection }) {
   const [isGradOpen, setIsGradOpen] = useState(false);
 
   return (
-    <aside className="w-64 bg-gray-50 p-6 min-h-screen border-r">
+<aside 
+  className="w-64 p-6 h-screen overflow-y-auto border-r flex-shrink-0"
+  style={{
+    backgroundImage: 'url(https://styleguide.umbc.edu/wp-content/uploads/sites/113/2019/05/maryland-flag-background-gold.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  }}
+>
       <h2 className="text-xl font-bold mb-6">FAQ Navigation</h2>
       
       {/* Undergraduate Section */}
@@ -23,40 +30,40 @@ export function FAQSidebar({ onSectionChange, activeSection }) {
           <div className="ml-4 space-y-2">
             <button 
               onClick={() => onSectionChange('undergrad', 'Miscellaneous Questions')}
-              className={`block w-full text-left px-3 py-2 rounded ${
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
                 activeSection.section === 'Miscellaneous Questions' 
-                  ? 'bg-blue-100 text-blue-700' 
-                  : 'hover:bg-gray-200'
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
               }`}
             >
               Miscellaneous Questions
             </button>
             <button 
               onClick={() => onSectionChange('undergrad', 'Advising')}
-              className={`block w-full text-left px-3 py-2 rounded ${
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
                 activeSection.section === 'Advising' 
-                  ? 'bg-blue-100 text-blue-700' 
-                  : 'hover:bg-gray-200'
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
               }`}
             >
               Advising
             </button>
             <button 
               onClick={() => onSectionChange('undergrad', 'Registration')}
-              className={`block w-full text-left px-3 py-2 rounded ${
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
                 activeSection.section === 'Registration' 
-                  ? 'bg-blue-100 text-blue-700' 
-                  : 'hover:bg-gray-200'
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
               }`}
             >
               Registration
             </button>
             <button 
               onClick={() => onSectionChange('undergrad', 'Graduation')}
-              className={`block w-full text-left px-3 py-2 rounded ${
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
                 activeSection.section === 'Graduation' 
-                  ? 'bg-blue-100 text-blue-700' 
-                  : 'hover:bg-gray-200'
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
               }`}
             >
               Graduation
@@ -78,24 +85,24 @@ export function FAQSidebar({ onSectionChange, activeSection }) {
         {isGradOpen && (
           <div className="ml-4 space-y-2">
             <button 
-              onClick={() => onSectionChange('grad', 'Graduate Programs')}
-              className={`block w-full text-left px-3 py-2 rounded ${
-                activeSection.section === 'Graduate Programs' 
-                  ? 'bg-blue-100 text-blue-700' 
-                  : 'hover:bg-gray-200'
+              onClick={() => onSectionChange('grad', 'General Questions')}
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
+                activeSection.section === 'General Questions' 
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
               }`}
             >
-              Graduate Programs
+              General Questions
             </button>
             <button 
-              onClick={() => onSectionChange('grad', 'Research Opportunities')}
-              className={`block w-full text-left px-3 py-2 rounded ${
-                activeSection.section === 'Research Opportunities' 
-                  ? 'bg-blue-100 text-blue-700' 
-                  : 'hover:bg-gray-200'
+              onClick={() => onSectionChange('grad', 'Computer Science Program Questions')}
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
+                activeSection.section === 'Computer Science Program Questions' 
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
               }`}
             >
-              Research Opportunities
+              Computer Science Program Questions
             </button>
           </div>
         )}
@@ -104,10 +111,10 @@ export function FAQSidebar({ onSectionChange, activeSection }) {
       {/* Home Button */}
       <button 
         onClick={() => onSectionChange('home', 'home')}
-        className={`block w-full text-left px-3 py-2 rounded mt-4 ${
+        className={`block w-full text-left px-3 py-2 rounded mt-4 transition-all hover:underline ${
           activeSection.category === 'home' 
-            ? 'bg-blue-100 text-blue-700' 
-            : 'hover:bg-gray-200'
+            ? 'bg-yellow-200 font-bold' 
+            : 'bg-yellow-50 hover:bg-yellow-200'
         }`}
       >
         Home
@@ -115,4 +122,3 @@ export function FAQSidebar({ onSectionChange, activeSection }) {
     </aside>
   );
 }
-
