@@ -1,0 +1,16 @@
+{% extends "admin/change_list.html" %}
+{% block content %}
+  <h1>FAQ Management</h1>
+  <p><a href="add/" class="button">Add New FAQ</a></p>
+
+  <table class="admin-table">
+    <tr><th>Question</th><th>Answer</th><th>Actions</th></tr>
+    {% for faq in faqs %}
+      <tr>
+        <td>{{ faq.question }}</td>
+        <td>{{ faq.answer }}</td>
+        <td><a href="delete/{{ faq.id }}/" style="color:red;">Delete</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

@@ -1,3 +1,9 @@
-from django.contrib import admin
+from django_mongoengine import mongo_admin
+from .models import FAQ
 
-# Register your models here.
+class FAQAdmin(mongo_admin.DocumentAdmin):
+    list_display = ('question', 'answer')
+    search_fields = ('question',)
+    form_fields = ('question', 'answer')  # ensures fields show in Add/Edit form
+
+mongo_admin.site.register(FAQ, FAQAdmin)
