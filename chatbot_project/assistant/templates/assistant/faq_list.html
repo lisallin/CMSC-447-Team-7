@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FAQs</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    h2 { margin-bottom: 0.2rem; }
+    p { margin-bottom: 1.5rem; }
+  </style>
+</head>
+<body>
+  <h1>Frequently Asked Questions</h1>
+  {% for faq in faqs %}
+    <div>
+      <h2>{{ faq.question }}</h2>
+      <p>{{ faq.answer }}</p>
+    </div>
+  {% empty %}
+    <p>No FAQs available yet.</p>
+  {% endfor %}
+</body>
+</html>
