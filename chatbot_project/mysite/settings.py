@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+from mongoengine import connect
+
+connect(
+    db='your_db_name',
+    host='mongodb://localhost:27017/your_db_name',
+)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,6 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django_mongoengine',         # core integration
+    'django_mongoengine.mongo_auth',
+    'django_mongoengine.mongo_admin',  # provides admin hooks
+
     'assistant',
 ]
 
@@ -55,10 +67,11 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [], #'DIRS': [BASE_DIR / 'assistant/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -86,6 +99,15 @@ DATABASES = {
     }
 }
 
+MONGODB_DATABASES = {
+    "default": {
+        "name": "mydatabase",       # <-- change this to your database name
+        "host": "localhost",
+        "port": 27017,
+        # "username": "myuser",     # optional
+        # "password": "mypassword", # optional
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
