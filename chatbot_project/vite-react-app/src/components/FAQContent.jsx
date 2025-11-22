@@ -178,6 +178,14 @@ export function FAQContent({ category, section }) {
           answer: ' An applicant who has not completed substantially all of the courses listed in response to the previous question will generally not be accepted as a degree-seeking student in our graduate program. However, such a student is invited to take these courses as a “special student” and to reapply after taking them.'
         }
       ]
+    },
+    faculty: {
+      'Faculty Questions': [
+        {
+          question: 'Sample faculty question',
+          answer: 'Sample faculty answer'
+        }
+      ]
     }
   };
 
@@ -211,11 +219,11 @@ export function FAQContent({ category, section }) {
     });
   };
 
-  return (
-    <div className="max-w-4xl">
+ return (
+    <div className="max-w-6xl">
       <h1 className="mb-2 text-3xl font-bold text-slate-900">{section}</h1>
       <p className="text-slate-600 mb-8">
-        {category === 'undergrad' ? 'Undergraduate' : 'Graduate'} / {section}
+        {category === 'undergrad' ? 'Undergraduate' : category === 'grad' ? 'Graduate' : 'Faculty'} / {section}
       </p>
 
       {faqs.length > 0 ? (
