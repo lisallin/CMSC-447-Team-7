@@ -17,9 +17,11 @@ Including another URLconf
 
 from django.urls import path, include
 from django_mongoengine import mongo_admin
+from django.contrib import admin
 
 urlpatterns = [
-    path('admin/', mongo_admin.site.urls),
+    path("django-admin/", admin.site.urls, name='django-admin'),
+    path('admin/', mongo_admin.site.urls, name='admin'),
     path('', include('assistant.urls')),
 ]
 
