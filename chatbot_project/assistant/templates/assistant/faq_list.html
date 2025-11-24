@@ -12,8 +12,9 @@
   <h1>Frequently Asked Questions</h1>
   {% for faq in faqs %}
     <div>
-      <h2>{{ faq.question }}</h2>
-      <p>{{ faq.answer }}</p>
+      <h2>Category: {{ faq.category }}</h2>
+      <h2>Question: {{ faq.question }}</h2>
+      <p>Answer: {{ faq.answer }}</p>
     </div>
   {% empty %}
     <p>No FAQs available yet.</p>
