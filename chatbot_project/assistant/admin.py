@@ -27,13 +27,9 @@ class FAQAdmin(mongo_admin.DocumentAdmin):
     # actions = ['delete_selected']
     def has_delete_permissions(self, request, obj=None):
         return True
-
     def delete_view(self, request, object_id, extra_context=None):
         FAQ.objects(id=object_id).delete()
         return redirect('mongo_admin:assistant_faq_changelist')
 
-
-            
-
-mongo_admin.site.register(Category, CategoryAdmin)
 mongo_admin.site.register(FAQ, FAQAdmin)
+mongo_admin.site.register(Category, CategoryAdmin)

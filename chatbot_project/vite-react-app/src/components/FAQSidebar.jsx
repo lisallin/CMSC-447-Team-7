@@ -4,23 +4,27 @@ import { useState } from 'react';
 export function FAQSidebar({ onSectionChange, activeSection }) {
   const [isUndergradOpen, setIsUndergradOpen] = useState(false);
   const [isGradOpen, setIsGradOpen] = useState(false);
+  const [isFacultyOpen, setIsFacultyOpen] = useState(false);
 
   return (
 <aside 
-  className="w-64 p-6 h-screen overflow-y-auto border-r flex-shrink-0"
+  className="w-64 p-6 h-screen overflow-y-auto border-r-4 flex-shrink-0"
   style={{
     backgroundImage: 'url(https://styleguide.umbc.edu/wp-content/uploads/sites/113/2019/05/maryland-flag-background-gold.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   }}
 >
-      <h2 className="text-xl font-bold mb-6">FAQ Navigation</h2>
+      <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
+      <img src="https://styleguide.umbc.edu/wp-content/uploads/sites/113/2019/08/UMBC-justSHIELD-color-768x883.png" alt="FAQ icon" className="w-7 h-7" />
+      FAQ Navigation
+      </h2>
       
       {/* Undergraduate Section */}
       <div className="mb-4">
         <button 
           onClick={() => setIsUndergradOpen(!isUndergradOpen)}
-          className="w-full flex items-center justify-between font-semibold mb-2"
+          className="w-full flex items-center justify-between font-semibold mb-2 bg-yellow-50 hover:bg-yellow-200 px-3 py-2 rounded transition-all"
         >
           <span>Undergraduate</span>
           <span>{isUndergradOpen ? '▼' : '▶'}</span>
@@ -76,7 +80,7 @@ export function FAQSidebar({ onSectionChange, activeSection }) {
       <div className="mb-4">
         <button 
           onClick={() => setIsGradOpen(!isGradOpen)}
-          className="w-full flex items-center justify-between font-semibold mb-2"
+          className="w-full flex items-center justify-between font-semibold mb-2 bg-yellow-50 hover:bg-yellow-200 px-3 py-2 rounded transition-all"
         >
           <span>Graduate</span>
           <span>{isGradOpen ? '▼' : '▶'} </span>
@@ -103,6 +107,32 @@ export function FAQSidebar({ onSectionChange, activeSection }) {
               }`}
             >
               Computer Science Program Questions
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Faculty Section */}
+      <div className="mb-4">
+        <button 
+          onClick={() => setIsFacultyOpen(!isFacultyOpen)}
+          className="w-full flex items-center justify-between font-semibold mb-2 bg-yellow-50 hover:bg-yellow-200 px-3 py-2 rounded transition-all"
+        >
+          <span>Faculty</span>
+          <span>{isFacultyOpen ? '▼' : '▶'}</span>
+        </button>
+        
+        {isFacultyOpen && (
+          <div className="ml-4 space-y-2">
+            <button 
+              onClick={() => onSectionChange('faculty', 'Faculty Questions')}
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
+                activeSection.section === 'Faculty Questions' 
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
+              }`}
+            >
+              Faculty Questions
             </button>
           </div>
         )}

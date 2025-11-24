@@ -3,7 +3,7 @@ export function HomePage() {
     <div className="max-w-6xl mx-auto">
       {/* Hero Section */}
       <div className="mb-12">
-        <h1 className="mb-8 text-slate-900">Welcome to the CSEE Department!</h1>
+        <h1 className="mb-8 text-slate-900 text-4xl font-bold">Welcome to the CSEE Department!</h1>
         
         {/* Image Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
