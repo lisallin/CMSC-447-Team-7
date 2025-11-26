@@ -15,8 +15,8 @@ from pathlib import Path
 from mongoengine import connect
 
 connect(
-    db='your_db_name',
-    host='mongodb://localhost:27017/your_db_name',
+    db='faq_database',
+    host='mongodb://localhost:27017/faq_database',
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -49,10 +49,13 @@ INSTALLED_APPS = [
     'django_mongoengine.mongo_auth',
     'django_mongoengine.mongo_admin',  # provides admin hooks
 
+    'rest_framework',
+    'corsheaders',
     'assistant',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -61,6 +64,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'mysite.urls'
 
