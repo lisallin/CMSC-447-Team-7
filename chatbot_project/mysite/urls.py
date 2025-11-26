@@ -20,9 +20,11 @@ Including another URLconf
 from django.urls import path, include
 from django_mongoengine import mongo_admin
 from assistant.api import faq_list, mock_ai
+from django.contrib import admin
 
 urlpatterns = [
-    path('admin/', mongo_admin.site.urls),
+    path("django-admin/", admin.site.urls, name='django-admin'),
+    path('admin/', mongo_admin.site.urls, name='admin'),
     path('', include('assistant.urls')),
     path("api/faqs/", faq_list),
     path("api/ai/", mock_ai),

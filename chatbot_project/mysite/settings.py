@@ -72,7 +72,8 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [], #'DIRS': [BASE_DIR / 'assistant/templates'],
+        'DIRS': [BASE_DIR, 'templates',
+                 BASE_DIR, 'templates/django_admin'],#'DIRS': [BASE_DIR / 'assistant/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -91,9 +92,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# SQL database for Django admin, auth, sessions
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',  # reliable for admin
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
