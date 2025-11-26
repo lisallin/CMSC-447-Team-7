@@ -31,6 +31,7 @@ class CategoryAdmin(mongo_admin.DocumentAdmin):
 
 #figure out a way to allow search for the faqs without using object id 
 #do an error check for if the user enters an invalid search then will just display 0 results 
+# fix the history button 
 class FAQAdmin(mongo_admin.DocumentAdmin):
     readonly_fields = ('answer_preview',)
     list_display = ('question', 'render_answer', 'category')
