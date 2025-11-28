@@ -15,8 +15,8 @@ from pathlib import Path
 from mongoengine import connect
 
 connect(
-    db='your_db_name',
-    host='mongodb://localhost:27017/your_db_name',
+    db='faq_database',
+    host='mongodb://localhost:27017/faq_database',
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -49,10 +49,13 @@ INSTALLED_APPS = [
     'django_mongoengine.mongo_auth',
     'django_mongoengine.mongo_admin',  # provides admin hooks
 
+    'rest_framework',
+    'corsheaders',
     'assistant',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -62,12 +65,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [], #'DIRS': [BASE_DIR / 'assistant/templates'],
+        'DIRS': [BASE_DIR, 'templates',
+                 BASE_DIR, 'templates/django_admin'],#'DIRS': [BASE_DIR / 'assistant/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -92,10 +98,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# SQL database for Django admin, auth, sessions
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo', 
-        'NAME': 'faq_database',
+        'ENGINE': 'django.db.backends.sqlite3',  # reliable for admin
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

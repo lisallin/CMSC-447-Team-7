@@ -1,0 +1,29 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block content %}
+<!-- FAQ button -->
+<div style="margin: 20px 0;">
+    <a href="{% url 'faq_list' %}" class="button"
+       style="background:#79aec8; color:white; padding:10px 16px; border-radius:4px; text-decoration:none; font-weight:bold;">
+       View Public FAQs
+    </a>
+</div>
+<!-- Go to django admin -->
+{% if request.path == '/admin/' %}
+<div style="margin: 50px 0;">
+    <a href="/django-admin/" class="button"
+       style="background:#79aec8; color:white; padding:10px 16px; border-radius:4px; text-decoration:none; font-weight:bold;">
+       Create Admin User
+    </a>
+</div>
+<!-- Go to admin -->
+{% elif request.path == '/django-admin/' %}
+<div style="margin: 50px 0;">
+    <a href="/admin/" class="button"
+       style="background:#79aec8; color:white; padding:10px 16px; border-radius:4px; text-decoration:none; font-weight:bold;">
+       Back
+    </a>
+</div>
+{% endif %}
+{% endblock %}

@@ -4,12 +4,14 @@ from .models import FAQ
 from django.http import HttpResponse
 
 def home(request):
+    #will use this link to attach to a login button on the UI 
     return HttpResponse('<a href="/admin/">Go to Admin Dashboard</a>')
 
 # 11:57 AM 11/7
 def faq_list(request):
     faqs = FAQ.objects.all()
     return render(request, 'assistant/faq_list.html', {'faqs': faqs})
+
 
 '''
     *** As of 1:07pm we are using the built in mongoengine add function. this has some of the ***
