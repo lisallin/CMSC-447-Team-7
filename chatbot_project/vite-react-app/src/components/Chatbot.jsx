@@ -109,6 +109,7 @@ export default function ChatbotIcon() {
     const [isClicked, setIsClicked] = useState(false);
     const [messages, setMessages] = useState([]);
     const [userInput, setUserInput] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState(null);
 
     const openBot = () => setIsClicked(!isClicked);
 
@@ -119,10 +120,15 @@ export default function ChatbotIcon() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ message }),
+            body: JSON.stringify({ message, category: selectedCategory }),
         });
         const data = await res.json();
         return data.reply;
+    }
+
+    // Handle category selection
+    function handleCategorySelect(category) {
+        setSelectedCategory(category);
     }
 
     // Handle sending message
@@ -170,7 +176,7 @@ export default function ChatbotIcon() {
                     fill="white"
                     preserveAspectRatio="xMidYMid meet"
                 >
-                    <g transform="translate(256 256) scale(2.2) translate(-256 -256)">
+                    <g transform="translate(256 256) scale(1.5) translate(-256 -256)">
                         <circle cx="256" cy="256" r="80" fill="#fbe033ff" />
                         <ellipse cx="180" cy="260" rx="40" ry="60" fill="#fbe033ff" />
                         <ellipse cx="332" cy="260" rx="40" ry="60" fill="#fbe033ff" />
@@ -224,9 +230,34 @@ export default function ChatbotIcon() {
                                     </svg>
                                 </div>
                                 <div className="bg-[#fbe033] rounded-lg p-3 border border-[#f5d820] flex-1">
-                                    <p className="text-sm text-gray-800">
-                                        Hello! I am your CSEE virtual assistant. How can I help you today?
+                                    <p className="text-sm text-gray-800 mb-3">
+                                        Hello! I am your CSEE virtual assistant. What can I help you with today?
                                     </p>
+                                    {!selectedCategory && (
+                                        <div className="flex flex-col gap-2">
+                                            <button
+                                                onClick={() => handleCategorySelect('undergraduate')}
+                                                className="bg-yellow-50 hover:bg-yellow-200 text-black px-3 py-2 rounded text-xs font-semibold transition-colors border border-[#f5d820]"
+                                            >
+                                                Undergraduate
+                                            </button>
+                                            <button
+                                                onClick={() => handleCategorySelect('graduate')}
+                                                className="bg-yellow-50 hover:bg-yellow-200 text-black px-3 py-2 rounded text-xs font-semibold transition-colors border border-[#f5d820]"
+                                            >
+                                                Graduate
+                                            </button>
+                                            <button
+                                                onClick={() => handleCategorySelect('faculty')}
+                                                className="bg-yellow-50 hover:bg-yellow-200 text-black px-3 py-2 rounded text-xs font-semibold transition-colors border border-[#f5d820]"
+                                            >
+                                                Faculty
+                                            </button>
+                                        </div>
+                                    )}
+                                    {selectedCategory && (
+                                        <p className="text-xs text-gray-700">Selected: <strong>{selectedCategory}</strong></p>
+                                    )}
                                 </div>
                             </div>
                         )}
