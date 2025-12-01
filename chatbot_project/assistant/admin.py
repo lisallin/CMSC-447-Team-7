@@ -1,9 +1,10 @@
 from django_mongoengine import mongo_admin
 from django.shortcuts import redirect
-from .models import FAQ, Category
+from .models import FAQ, FAQEmbedding, Category
 from django.contrib import messages
 from mongoengine.errors import NotUniqueError
 from django.utils.html import format_html
+from .embeddings import embed_text
 import re
 
 URL_PATTERN = re.compile(
@@ -52,6 +53,18 @@ class FAQAdmin(mongo_admin.DocumentAdmin):
     def delete_view(self, request, object_id, extra_context=None):
         FAQ.objects(id=object_id).delete()
         return redirect('mongo_admin:assistant_faq_changelist') #after deletion brings user back to faq page
+    
+    #automatically generate embeddings when FAQ is created
+    def save_model(self, request, obj, form, change):
+        # Save the FAQ first
+        obj.save()
+
+        # Generate or update embedding
+        embedding_vector = embed_text(f"{obj.question}\n{obj.answer}")
+        FAQEmbedding.objects.get_or_create(
+            faq=obj,
+            defaults={'embedding': embedding_vector}
+        )
 
 mongo_admin.site.register(FAQ, FAQAdmin)
 mongo_admin.site.register(Category, CategoryAdmin)
