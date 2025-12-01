@@ -125,14 +125,84 @@ export function FAQSidebar({ onSectionChange, activeSection }) {
         {isFacultyOpen && (
           <div className="ml-4 space-y-2">
             <button 
-              onClick={() => onSectionChange('faculty', 'Faculty Questions')}
+              onClick={() => onSectionChange('faculty', 'Administrative')}
               className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
                 activeSection.section === 'Faculty Questions' 
                   ? 'bg-yellow-200 font-bold' 
                   : 'bg-yellow-50 hover:bg-yellow-200'
               }`}
             >
-              Faculty Questions
+              Administrative
+            </button>
+            <button 
+              onClick={() => onSectionChange('faculty', 'Business')}
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
+                activeSection.section === 'Faculty Questions' 
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
+              }`}
+            >
+              Business
+            </button>
+            <button 
+              onClick={() => onSectionChange('faculty', 'RA Contact Request')}
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
+                activeSection.section === 'Faculty Questions' 
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
+              }`}
+            >
+              RA Contact Request
+            </button>
+            <button 
+              onClick={() => onSectionChange('faculty', 'Academic')}
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
+                activeSection.section === 'Faculty Questions' 
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
+              }`}
+            >
+              Academic
+            </button>
+            <button 
+              onClick={() => onSectionChange('faculty', 'Alumni News')}
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
+                activeSection.section === 'Faculty Questions' 
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
+              }`}
+            >
+              Alumni News
+            </button>
+            <button 
+              onClick={() => onSectionChange('faculty', 'Information Technology')}
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
+                activeSection.section === 'Faculty Questions' 
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
+              }`}
+            >
+              Information Technology
+            </button>
+            <button 
+              onClick={() => onSectionChange('faculty', 'Student Employment')}
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
+                activeSection.section === 'Faculty Questions' 
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
+              }`}
+            >
+              Student Employment
+            </button>
+            <button 
+              onClick={() => onSectionChange('faculty', 'COEIT Shared Services Center')}
+              className={`block w-full text-left px-3 py-2 rounded transition-all hover:underline ${
+                activeSection.section === 'Faculty Questions' 
+                  ? 'bg-yellow-200 font-bold' 
+                  : 'bg-yellow-50 hover:bg-yellow-200'
+              }`}
+            >
+              COEIT Shared Services Center
             </button>
           </div>
         )}

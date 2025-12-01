@@ -180,12 +180,103 @@ export function FAQContent({ category, section }) {
       ]
     },
     faculty: {
-      'Faculty Questions': [
+      'Administrative': [
         {
-          question: 'Sample faculty question',
-          answer: 'Sample faculty answer'
+          question: 'How can I reserve a room?',
+          answer: 'This is the form for room reservations: https://docs.google.com/forms/d/e/1FAIpQLSfLVK2HyLdq0NmL_NIJva6YTfgtsZ2J3n800w9KLqjWvjIF_A/viewform?c=0&w=1'
+        },
+        {
+          question: 'How can I get card swipe/room access?',
+          answer: 'This is the form to request card swipe/room access: https://docs.google.com/forms/d/e/1FAIpQLScQs5QiJrMrFbYqA4PnOLEP2VfJc_39EujAZEb3MU0P76RS2g/viewform?c=0&w=1 \nFaculty ONLY may complete this form.',
+
+        },
+        {
+          question: 'How can I remove card swipe/room access?',
+          answer: 'This is the form to request removal of card swipe/room access: https://docs.google.com/forms/d/e/1FAIpQLSdDBDJykDg3OZKGHl7YVAxnKjHLR02aX7tV8KrVfyXxiS-uMQ/viewform?c=0&w=1',
+        },
+        {
+          question: 'How can I request a parking code?',
+          answer: 'This is the form for requesting a parking code: https://docs.google.com/forms/d/e/1FAIpQLSfGqIatUyvpZveNFJ50S60vpfDJGYbcS2Tv-I8py1Y3Z-o0KA/viewform \nOnly faculty and staff are permitted to complete this form',
+        },
+        {
+          question: 'How can I remove card swipe/room access?',
+          answer: 'This is the form to request removal of card swipe/room access: https://docs.google.com/forms/d/e/1FAIpQLSdDBDJykDg3OZKGHl7YVAxnKjHLR02aX7tV8KrVfyXxiS-uMQ/viewform?c=0&w=1',
         }
-      ]
+      ],
+      'Business': [
+        {
+          question: 'How can I request a purchase card/P-Card?',
+          answer: 'Computer science and computer engineering majors who have passed their respective gateway requirements are assigned individual faculty advisors. Pre-gateway majors are advised by the advising staff. Their offices are located in the ITE Building in Rooms 203-206. For more information, please see the advising information provided by the Office of Undergraduate Student Services.'
+        },
+        {
+          question: 'Where can I find UMBC policies?',
+          answer: 'This is the link for reviewing UMBC policies on staffing, administration, affairs, research, relations, IT, etc: https://www2.umbc.edu/policies/',
+        },
+        {
+          question: 'Where can I find information about UMBC travel rates?',
+          answer: 'This is the link to access travel forms, rates, etc from the Business Services: https://businessservices.umbc.edu/travel/'
+        },
+        {
+          question: 'More information about UMBC business and travel.',
+          answer: 'UMBC reimbursement rates for meals and mileage \nDomestic Per Diem, effective January 1, 2024:\n$9.00 Breakfast\n$16.00 Lunch\n$38.00 Dinner\nPersonal vehicle use is $0.67 per mile, effective January 1, 2024.\nForeign travel is reimbursed at the applicable U.S. Department of State Meal and Incidental Rate without receipts, or the actual cost with receipts: https://allowances.state.gov/web920/per_diem.asp'
+        },
+        {
+          question: 'Where can I submit miscellaneous payments?',
+          answer: ' This is the link to submit payments for Honorariums, Stipends, Memberships, Registrations, and Other types: https://www.csee.umbc.edu/wp-content/uploads/sites/659/2022/05/CSEEMiscPayRequestForm.pdf'
+        }
+      ],
+      'RA Contact Request': [
+        {
+          question: 'How can I request a contract for an RA?', 
+          answer: 'This is the form to contact a graduate RA: https://docs.google.com/forms/d/e/1FAIpQLSfRsroh1DA0LUgWE0nDKP5GD_--5LIN7BB7e66VmdwDDCzwxg/viewform \nOnly faculty and staff are permitted to complete this form.'
+        },
+        {
+          question: 'How can I amend a graduate RA’s contract?',
+          answer: 'This is the form to generate an amendment request for a student with a GA contract: https://docs.google.com/forms/d/e/1FAIpQLSeaEtMQrQ_c8ZNoj9WhqA4C-gU6VdEt2b2muYo0BTwWc9nA_g/viewform'
+        }
+      ],
+      'Academic': [
+        {
+          question: 'How can I buyout a course?', 
+          answer: 'This is the downloadable form to the course buyout request form: Course buyout request form (download link)'
+        },
+        {
+          question: ' How can I request a contract for an RA?',
+          answer: ' This is the downloadable form to the special topics approval form: Special Topics approval form (download link)'
+        },
+        {
+          question: 'How can I request a faculty appointment?',
+          answer: 'This is the form that is used to request new appointments and renewals: https://docs.google.com/forms/d/e/1FAIpQLSeU4NpfwRXIaK2uAVt2IAWUWb7XshKQ72oyJzsx-SNUwaTL3w/viewform'
+        }
+      ],
+      'Alumni News': [
+        {
+          question: 'How do I share news about an alumnus?', 
+          answer: 'This is the form to share news about an alum with UMBC’s Alumni Relations department: https://www.alumni.umbc.edu/s/1325/hybrid/index.aspx?sid=1325&gid=1&pgid=1367&cid=2652&post_id=0'
+        }
+      ],
+      'Information Technology': [
+        {
+          question: 'How can I request IT services?', 
+          answer: 'This is the link to all the IT services offered by UMBC:https://www.csee.umbc.edu/resources/it-services/'
+        }
+      ],
+       'Student Employment': [
+        {
+          question: 'How can I make an appointment related to student employment?', 
+          answer: ' This is the link to submit a ticket for CSEE/CASPR Hourly Student Appointments: https://services-center.coeit.umbc.edu/requests/'
+        }
+      ],
+       'COEIT Shared Services Center': [
+        {
+          question: 'Where can I get information about the COEIT Shared Services Center?', 
+          answer: 'The COEIT Shared Services Center offers support to students, faculty, and staff, here is the link to their site for more information: https://services-center.coeit.umbc.edu/'
+        },
+        {
+          question: 'How do I deal with CSEE specific questions, make requests, or report problems?',
+          answer: 'This is the link to submit a ticket to the CSEE department. (authentication form link)'
+        }
+      ],
     }
   };
 

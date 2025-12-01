@@ -141,7 +141,7 @@ export default function ChatbotIcon() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ message }),
+            body: JSON.stringify({ message, category: selectedCategory }),
         });
         const data = await res.json();
         return data.reply;
@@ -197,7 +197,7 @@ export default function ChatbotIcon() {
                     fill="white"
                     preserveAspectRatio="xMidYMid meet"
                 >
-                    <g transform="translate(256 256) scale(2.2) translate(-256 -256)">
+                    <g transform="translate(256 256) scale(1.5) translate(-256 -256)">
                         <circle cx="256" cy="256" r="80" fill="#fbe033ff" />
                         <ellipse cx="180" cy="260" rx="40" ry="60" fill="#fbe033ff" />
                         <ellipse cx="332" cy="260" rx="40" ry="60" fill="#fbe033ff" />
