@@ -105,10 +105,32 @@ export default function ChatbotIcon() {
 import React, { useState } from "react";
 import { X } from "lucide-react";
 
+function linkify(text) {
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+
+  return text.split(urlRegex).map((part, i) => {
+    if (urlRegex.test(part)) {
+      return (
+        <a
+          key={i}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline break-words"
+        >
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
 export default function ChatbotIcon() {
     const [isClicked, setIsClicked] = useState(false);
     const [messages, setMessages] = useState([]);
     const [userInput, setUserInput] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState(null);
 
     const openBot = () => setIsClicked(!isClicked);
 
@@ -123,6 +145,11 @@ export default function ChatbotIcon() {
         });
         const data = await res.json();
         return data.reply;
+    }
+
+    // Handle category selection
+    function handleCategorySelect(category) {
+        setSelectedCategory(category);
     }
 
     // Handle sending message
@@ -148,10 +175,10 @@ export default function ChatbotIcon() {
                 onClick={openBot}
                 style={{
                     position: "fixed",
-                    bottom: "50px",
-                    right: "50px",
-                    width: "70px",
-                    height: "70px",
+                    bottom: "2.5vh",
+                    right: "2.5vw",
+                    width: "4.75vw",
+                    height: "4.75vw",
                     borderRadius: "50%",
                     backgroundColor: "#000000ff",
                     border: "none",
@@ -159,14 +186,14 @@ export default function ChatbotIcon() {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    boxShadow: "0 20px 50px rgba(255, 239, 8, 0.99)",
+                    boxShadow: "0 4vh 4vw 0.7vw rgba(255, 239, 8, 1)",
                 }}
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
-                    width="100%"
-                    height="100%"
+                    width="70%"
+                    height="70%"
                     fill="white"
                     preserveAspectRatio="xMidYMid meet"
                 >
@@ -224,9 +251,34 @@ export default function ChatbotIcon() {
                                     </svg>
                                 </div>
                                 <div className="bg-[#fbe033] rounded-lg p-3 border border-[#f5d820] flex-1">
-                                    <p className="text-sm text-gray-800">
-                                        Hello! I am your CSEE virtual assistant. How can I help you today?
+                                    <p className="text-sm text-gray-800 mb-3">
+                                        Hello! I am your CSEE virtual assistant. To get started, please tell me what category you fall in:
                                     </p>
+                                    {!selectedCategory && (
+                                        <div className="flex flex-col gap-2">
+                                            <button
+                                                onClick={() => handleCategorySelect('undergraduate')}
+                                                className="bg-yellow-50 hover:bg-yellow-200 text-black px-3 py-2 rounded text-xs font-semibold transition-colors border border-[#f5d820]"
+                                            >
+                                                Undergraduate
+                                            </button>
+                                            <button
+                                                onClick={() => handleCategorySelect('graduate')}
+                                                className="bg-yellow-50 hover:bg-yellow-200 text-black px-3 py-2 rounded text-xs font-semibold transition-colors border border-[#f5d820]"
+                                            >
+                                                Graduate
+                                            </button>
+                                            <button
+                                                onClick={() => handleCategorySelect('faculty')}
+                                                className="bg-yellow-50 hover:bg-yellow-200 text-black px-3 py-2 rounded text-xs font-semibold transition-colors border border-[#f5d820]"
+                                            >
+                                                Faculty
+                                            </button>
+                                        </div>
+                                    )}
+                                    {selectedCategory && (
+                                        <p className="text-xs text-gray-700">Selected: <strong>{selectedCategory}</strong></p>
+                                    )}
                                 </div>
                             </div>
                         )}
@@ -236,7 +288,7 @@ export default function ChatbotIcon() {
                             msg.sender === "user" ? (
                                 <div key={index} className="flex justify-end mb-3">
                                     <div className="bg-black text-white p-3 rounded-lg max-w-[80%]">
-                                        <p className="text-sm">{msg.text}</p>
+                                        <p className="text-sm">{linkify(msg.text)}</p>
                                     </div>
                                 </div>
                             ) : (
@@ -262,7 +314,7 @@ export default function ChatbotIcon() {
                                         </svg>
                                     </div>
                                     <div className="bg-[#fbe033] p-3 rounded-lg border border-[#f5d820] max-w-[80%]">
-                                        <p className="text-sm">{msg.text}</p>
+                                        <p className="text-sm">{linkify(msg.text)}</p>
                                     </div>
                                 </div>
                             )
@@ -272,16 +324,22 @@ export default function ChatbotIcon() {
                     {/* Input */}
                     <div className="p-4 border-t border-gray-200 flex gap-2">
                         <input
-                            type="text"
-                            placeholder="Type your message..."
-                            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fbe033] text-sm"
-                            value={userInput}
-                            onChange={(e) => setUserInput(e.target.value)}
-                            onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
+                        type="text"
+                        placeholder="Type your message..."
+                        value={userInput}
+                        onChange={(e) => setUserInput(e.target.value)}
+                        onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
+                        disabled={!selectedCategory}
+                        className={`flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 text-sm ${
+                            !selectedCategory
+                            ? "bg-gray-100 cursor-not-allowed border-gray-200"
+                            : "bg-white border-gray-300 focus:ring-[#fbe033]"
+                        }`}
                         />
                         <button
-                            onClick={handleSendMessage}
-                            className="bg-[#f5d820] hover:bg-[#fbe033] px-4 py-2 rounded-lg text-black font-semibold"
+                        onClick={handleSendMessage}
+                        disabled={!selectedCategory}
+                        className="bg-[#f5d820] hover:bg-[#fbe033] px-4 py-2 rounded-lg text-black font-semibold disabled:opacity-50"
                         >
                             Send
                         </button>
